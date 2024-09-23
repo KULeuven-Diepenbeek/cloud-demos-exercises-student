@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  docker_build_files_demo2_pythonlive:
+    container_name: docker_build_files_demo2_pythonlive
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5009:5000

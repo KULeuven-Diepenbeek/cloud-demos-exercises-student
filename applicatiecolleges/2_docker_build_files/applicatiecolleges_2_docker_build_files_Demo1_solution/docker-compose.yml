@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  docker_build_files_demo1_pythondev:
+    container_name: docker_build_files_demo1_pythondev
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5008:5000
+    volumes:
+      - ./app:/app
