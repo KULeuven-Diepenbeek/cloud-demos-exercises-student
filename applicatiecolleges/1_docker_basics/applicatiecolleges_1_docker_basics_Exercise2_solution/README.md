@@ -56,9 +56,9 @@ $ mariadb –u root –p
 # Maak database
 MariaDB [(none)]> CREATE DATABASE test;
 # enter je database: 
-MariaDB [(none)]> \u test2
+MariaDB [(none)]> \u test
 # edit je database
-MariaDB [test2]> schrijf_hier_je_sql_commands
+MariaDB [test]> schrijf_hier_je_sql_commands
 ```
 
 3. Maak een database en tabel aan en bekijk je `mydata` folder. Je zal zien dat alle files voor de database erin verschenen zijn.
