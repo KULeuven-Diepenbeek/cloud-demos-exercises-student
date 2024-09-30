@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  docker_build_files_exercise2_java:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker_build_files_exercise2_java

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  docker_build_files_exercise1_cprojects:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker_build_files_exercise1_cprojects
+    volumes:
+      - ./myfiles:/home/cprojects
+    working_dir: /home
+    command: tail -f /dev/null
+    restart: unless-stopped
