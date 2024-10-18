@@ -8,13 +8,6 @@ use App\Models\LaravelUser;
 
 class LaravelUserController extends Controller
 {
-    // Show databases
-    public function showDatabases()
-    {
-        $databases = DB::select('SHOW DATABASES');
-        return view('databases', ['databases' => $databases]);
-    }
-
     // Get all laravelUsers
     public function getLaravelUsers(Request $request)
     {
