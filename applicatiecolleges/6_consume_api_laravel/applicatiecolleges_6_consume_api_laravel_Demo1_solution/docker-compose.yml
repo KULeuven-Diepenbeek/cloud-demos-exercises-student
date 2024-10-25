@@ -9,7 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
-    command: sh entrypoint.sh # docker exec -it laravel_api /bin/bash
+    command: tail -f /dev/null # Laat de container gewoon oneindig draaien. Goed voor development omgeving.
     depends_on:
       - db
     environment:

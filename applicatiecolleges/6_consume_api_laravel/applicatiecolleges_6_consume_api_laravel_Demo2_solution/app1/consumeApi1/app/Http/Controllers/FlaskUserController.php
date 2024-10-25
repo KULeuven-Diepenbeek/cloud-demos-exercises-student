@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-use App\Models\FlaskUser;
 
 class FlaskUserController extends Controller
 {
+    // Definieer een Client object dat we binnen de controller kunnen herbruiken
     protected $client;
 
     public function __construct()
     {
+        // uri is de flask service uit onze docker-compose
         $this->client = new Client(['base_uri' => 'server2:5000']);
     }
 
@@ -21,7 +22,7 @@ class FlaskUserController extends Controller
         $response = $this->client->get('/api/users', [
             'query' => ['pwd' => 'mypassword']
         ]);
-
+        // error_log($response);
         $users = json_decode($response->getBody()->getContents(), true);
         return response()->json($users);
     }

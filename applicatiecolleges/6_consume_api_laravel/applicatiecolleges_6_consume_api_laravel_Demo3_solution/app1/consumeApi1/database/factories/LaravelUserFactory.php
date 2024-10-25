@@ -2,18 +2,22 @@
 
 namespace Database\Factories;
 
-use App\Models\LaravelUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\LaravelUser>
+ */
 class LaravelUserFactory extends Factory
 {
-    protected $model = LaravelUser::class;
-
-    public function definition()
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->name,  // Use unique name for other users
-            'email' => $this->faker->unique()->safeEmail, // Use unique email for other users
+            //
         ];
     }
 }
