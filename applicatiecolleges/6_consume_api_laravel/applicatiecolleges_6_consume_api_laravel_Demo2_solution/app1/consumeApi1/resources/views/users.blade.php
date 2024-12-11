@@ -47,7 +47,7 @@
     // Function to fetch users and populate the table
     function fetchUsers() {
         // Hier doen we dus een oproep naar het lokale endpoint
-        fetch('/flaskusers')
+        fetch('/api/flaskusers')
             .then(response => response.json())
             .then(users => {
                 const usersTable = document.getElementById('usersTable').getElementsByTagName('tbody')[0];
@@ -72,7 +72,7 @@
 
     // Function to delete a user
     function deleteUser(id) {
-        fetch(`/users/${id}`, {
+        fetch(`/api/users/${id}`, {
             method: 'DELETE'
         })
         .then(response => response.json())
@@ -95,7 +95,7 @@
             email: document.getElementById('email').value,
         };
 
-        fetch('/users', {
+        fetch('/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
