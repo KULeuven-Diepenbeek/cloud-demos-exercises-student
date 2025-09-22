@@ -6,9 +6,10 @@ WORKDIR /home
 
 # Copy the current directory contents into the container at /app
 COPY ./myfiles /home
+COPY ./entrypoint.sh /entrypoint.sh
 
 # Make the entrypoint script executable
-RUN chmod +x /home/entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Set the entrypoint script to be executed
-ENTRYPOINT ["/home/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   docker_build_files_demo1_pythondev:
     container_name: docker_build_files_demo1_pythondev
@@ -8,6 +6,6 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 5011:5000
+      - 5001:5000
     volumes:
       - ./app:/app

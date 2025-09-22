@@ -1,4 +1,4 @@
-### [Exercise 1](https://kuleuven-diepenbeek.github.io/cloud-course/applicatiecolleges/docker_basics/#exercise-1)
+### [Exercise 1](https://kuleuven-diepenbeek.github.io/cloud-course/docker/docker_basics/#exercise-1)
 
 Gebruik de nginx base image en maak gebruik van docker volumes om je eigen statische website te tonen
 
@@ -8,8 +8,6 @@ Uit [de gevonden documentatie](https://hub.docker.com/_/nginx) blijkt dat we vol
 
 1. Ik maak een docker-compose.yml file:
 ```yml
-version: '3.8'
-
 services:
   nginx_example:
     image: nginx:latest

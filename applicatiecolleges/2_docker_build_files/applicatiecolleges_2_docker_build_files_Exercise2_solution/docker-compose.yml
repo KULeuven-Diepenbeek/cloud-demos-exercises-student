@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   docker_build_files_exercise2_java:
     build:

@@ -1,4 +1,4 @@
-### [Exercise 2](https://kuleuven-diepenbeek.github.io/cloud-course/applicatiecolleges/docker_basics/#exercise-2)
+### [Exercise 2](https://kuleuven-diepenbeek.github.io/cloud-course/docker/docker_basics/#exercise-2)
 
 Ik gebruik de mariadb base image en pas de environment variables aan naar het gewenste wachtwoord, user ...
 
@@ -7,8 +7,6 @@ Uit [de gevonden documentatie](https://hub.docker.com/_/mariadb) blijkt dat de v
 1. Ik maak een docker-compose.yml file:
 ```yml
 # Use root/example as user/password credentials
-version: '3.1'
-
 services:
   db:
     image: mariadb
@@ -29,8 +27,6 @@ Een beetje verder zoeken in de documentatie geeft ons het volgende om onze eigen
 
 ```yml
 # Use root/example as user/password credentials
-version: '3.1'
-
 services:
   db:
     image: mariadb

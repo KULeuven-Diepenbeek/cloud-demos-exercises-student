@@ -1,4 +1,4 @@
-# [Exercise 2:](https://kuleuven-diepenbeek.github.io/cloud-course/applicatiecolleges/docker_build_files/#exercise-2) Java running command
+# [Exercise 2:](https://kuleuven-diepenbeek.github.io/cloud-course/docker/docker_build_files/#exercise-2) Java running command
 
 Maak een `Dockerfile` en een `docker-compose.yml` file die een Java omgeving opzet.
 Zorg ervoor dat wanneer je deze container runt, bij het starten het java programma in `./myfiles` gecompileerd en uitgevoerd wordt. (gebruik hier een `entrypoint.sh` file voor)
