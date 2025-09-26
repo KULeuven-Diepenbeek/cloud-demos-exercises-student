@@ -7,7 +7,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: tail -f /dev/null # Laat de container gewoon oneindig draaien. Goed voor development omgeving.
+    # command: tail -f /dev/null
     ports:
       - 5000:5000
     volumes:

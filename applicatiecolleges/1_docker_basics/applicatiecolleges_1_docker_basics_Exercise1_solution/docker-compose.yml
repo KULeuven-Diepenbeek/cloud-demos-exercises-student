@@ -1,6 +1,6 @@
 services:
   nginx_example:
-    image: nginx:latest
+    image: nginx:stable-perl
     container_name: nginx_example
     ports:
       - "9091:80"

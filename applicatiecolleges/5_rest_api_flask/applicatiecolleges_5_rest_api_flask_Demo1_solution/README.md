@@ -7,7 +7,7 @@
 
 2. Kijk goed naar de docker-compose file of gebruik het commando `docker ps -a` om te kijken wat de naam van je Laravel container te vinden. Gebruik die naam in het volgende commando om een shell te openen in de container: `docker exec -it <mijnContainerNaam> /bin/bash`
 
-3. Nu je in de container zit, kan je het de flask server starten met `python3 ./app.py`. Alle info over hoe de code werkt is terug te vinden op de website of in de oplossing van deze demo. (Vergeet niet dat je eerst alle dependencies in je container moet installeren via het commando in de container `pip install -r requirements.txt`)
+3. Nu je in de container zit, kan je het de flask server starten met `python3 ./app.py`. Alle info over hoe de code werkt is terug te vinden op de website of in de oplossing van deze demo. (Vergeet niet dat je eerst alle dependencies in je container moet installeren via het commando in de container `pip install -r requirements.txt`, indien nodig)
 
 4. Je kan nu de endpoints van je website bekijken via een webbrowser op de host. (Via je webbrowser kan je natuurlijk wel alleen GET requests sturen) Je zal dan gewoon JSON objecten te zien krijgen die teruggegeven worden door je API. Wanneer we de api gaan consumeren is het die JSON data die we dan verder gaan verwerken. (De andere functionaliteiten van je programma kan je ook testen met [Thunderclient](https://www.thunderclient.com/))
 

@@ -17,7 +17,7 @@ services:
       - db
 
   db:
-    image: mariadb
+    image: mariadb:10.6.19-focal
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
@@ -27,7 +27,7 @@ services:
       - mynetwork
 
   adminer:
-    image: adminer
+    image: adminer:4.8.1-standalone
     restart: always
     ports:
       - 9092:8080
