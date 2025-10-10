@@ -1,0 +1,71 @@
+services:
+  app:
+    image: bitnamilegacy/laravel:11-debian-12
+    container_name: laravel_consume_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./laravel/app:/app
+    # command: tail -f /dev/null # Laat de container gewoon oneindig draaien. Goed voor development omgeving.
+    command: bash -c "chmod +x /app/entrypoint.sh && /app/entrypoint.sh"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=laravel
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+    networks:
+      - apitestnetwork
+
+
+  api:
+    container_name: flask_api
+    restart: unless-stopped
+    build:
+      context: ./flask
+      dockerfile: ./Dockerfile
+    # command: tail -f /dev/null
+    ports:
+      - 5000:5000
+    volumes:
+      - ./flask/app:/app
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=restapi
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+    networks:
+      - apitestnetwork
+
+  db:
+    image: mariadb:10.6.19-focal
+    container_name: maria_db
+    restart: unless-stopped
+    environment:
+      - MARIADB_DATABASE=restapi
+      - MARIADB_USER=maria_user
+      - MARIADB_PASSWORD=mariaPwd
+      - MARIADB_ROOT_PASSWORD=root
+    volumes:
+      - ./db/data:/var/lib/mysql:Z
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - apitestnetwork
+
+  adminer:
+    image: adminer:4.8.1-standalone
+    restart: unless-stopped
+    ports:
+      - 9092:8080
+    networks:
+      - apitestnetwork
+
+networks:
+  apitestnetwork:
+    driver: bridge

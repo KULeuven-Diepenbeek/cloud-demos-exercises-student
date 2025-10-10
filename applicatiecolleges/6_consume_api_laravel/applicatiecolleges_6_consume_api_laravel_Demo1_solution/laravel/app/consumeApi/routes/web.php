@@ -34,3 +34,10 @@ Route::delete('/users/{id}', [FlaskUserController::class, 'destroy']);
 Route::get('/users-via-backend',function () {
     return view('users-via-backend');
 });
+
+// EXAMPLE of how you can test your code...
+Route::get('/testing',function () {
+    $controller = new FlaskUserController();
+    $result = $controller->index(request());
+    dd($result); // Dump and die
+});
