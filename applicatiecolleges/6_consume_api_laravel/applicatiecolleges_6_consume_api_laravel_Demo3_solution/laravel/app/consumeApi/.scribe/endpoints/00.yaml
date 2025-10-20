@@ -1,0 +1,242 @@
+name: 'Laravel Users'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/laravelUsers
+    metadata:
+      groupName: 'Laravel Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Haal alle gebruikers op.
+
+        Dit endpoint geeft een lijst terug van alle Laravel-gebruikers als JSON.
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      pwd:
+        name: pwd
+        description: 'Vereist. Wachtwoord om toegang te krijgen. Voorbeeld: mypassword'
+        required: false
+        example: '|]|{+-'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanQueryParameters:
+      pwd: '|]|{+-'
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id": 1, "name": "John Doe", "email": "john@example.com"}'
+        headers: []
+        description: Succesvol
+        custom: []
+      -
+        status: 403
+        content: '{"message": "Wrong password mate"}'
+        headers: []
+        description: 'Verkeerd wachtwoord'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/laravelUsers/{id}'
+    metadata:
+      groupName: 'Laravel Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: |-
+        Haal een specifieke gebruiker op.
+
+        Geeft de gegevens van een gebruiker terug op basis van zijn ID.
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'Vereist. De ID van de gebruiker.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id": 1, "name": "John Doe", "email": "john@example.com"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "User not found"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/laravelUsers
+    metadata:
+      groupName: 'Laravel Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Maak een nieuwe gebruiker aan.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Vereist. De naam van de gebruiker.'
+        required: false
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'Vereist. Het e-mailadres van de gebruiker.'
+        required: false
+        example: john@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: 'John Doe'
+      email: john@example.com
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: '{"message": "User created successfully"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 400
+        content: '{"error": "Name and email required"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: '{"error": "Database error"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/laravelUsers/{id}'
+    metadata:
+      groupName: 'Laravel Users'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Verwijder een gebruiker.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'Vereist. De ID van de gebruiker.'
+        required: false
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"message": "User deleted successfully"}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message": "User not found"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
